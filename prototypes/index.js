@@ -27,41 +27,36 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const result = kitties
+        .filter(kittie => kittie.color === 'orange')
+        .map(kittie => kittie.name)
+    return result
+    // (pet => {
+//   return pet.age === 3
+// })
 
     // Annotation:
     // Write your annotation here as a comment
   },
 
-  sortByAge() {
-    // Sort the kitties by their age
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    sortByAge() {
+    const result = kitties.sort((a, b) => b.age - a.age);
     return result;
-
     // Annotation:
     // Write your annotation here as a comment
   },
 
   growUp() {
-    // Return an array of kitties who have all grown up by 2 years e.g.
-    // [{
-    //   name: 'Felicia',
-    //   age: 4,
-    //   color: 'grey'
-    // },
-    // {
-    //   name: 'Tiger',
-    //   age: 7,
-    //   color: 'orange'
-    // },
-    // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+
+    const result = kitties.map(kittie => {
+      kittie.age += 2
+      return kittie
+    })
     return result;
   }
-};
+}
+
 
 
 
